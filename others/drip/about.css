@@ -1,0 +1,19 @@
+body{
+    background-image: url(https://wallpaperstock.net/wallpapers/thumbs1/42684hd.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+div{
+    margin-top: 100px 200px;
+    background-color: rgba(204, 204, 204, 0.5);
+    padding: 10px 20px;
+    font-size: 20px;
+    margin: 0px 50px;
+}
+ul,li,a{
+    list-style-type: circle;
+    color: white;
+    text-decoration: none;
+}
