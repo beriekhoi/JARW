@@ -1,0 +1,50 @@
+h1{
+    text-align: center;
+}
+body{
+    background-image: url(https://wallpaperstock.net/wallpapers/thumbs1/42684hd.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.animalPic{
+    width: 400px;
+    height: auto;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+footer{
+    position:fixed,static;
+    padding:25px 20px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+div{
+    background-color: rgba(204, 204, 204, 0.5);
+    padding: 10px 20px;
+    margin: 0px 50px;
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 118.6px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: #ffff;
+    color: black ;
+}
