@@ -9,16 +9,9 @@
 h1{
     text-align: center;
 }
-.diceBtn{
-    padding: 5px 10px;
-}
-.qrSubmit{
+button{
     padding: 5px 10px;
     cursor: pointer;
-}
-.factBtn{
-    cursor: pointer;
-    padding: 5px 10px;
 }
 .error{
     color: red;
@@ -31,7 +24,7 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
-.animalPic{
+.animalPic,.dailyMeme{
     width: 400px;
     height: auto;
 }
