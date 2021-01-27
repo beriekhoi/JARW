@@ -24,9 +24,35 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
+button{
+    width: 100px;
+    height:2rem;
+    margin: 30px 40px;
+    transform: translate(-50%,-50%);
+    background: black;
+    color: white;
+    border: 1px solid white;
+    outline:none ;
+}
+button::before{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: #ffe53b;
+    background-image:linear-gradient(147deg, #ffe53b 0%,#ff2525 74%);
+    z-index: -1;
+    clip-path: circle(0% at 50% 100%);
+    transition: all .8s;
+}
+button:hover::before{
+    clip-path: circle(100% at 50% 100%);
+}
 .animalPic,.meme{
-    width: 400px;
-    height: auto;
+    height: 400px;
+    width: auto;
 }
 ul{
     list-style-type: none;
