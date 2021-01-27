@@ -24,7 +24,7 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
-.animalPic,.dailyMeme{
+.animalPic,.meme{
     width: 400px;
     height: auto;
 }
