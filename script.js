@@ -114,7 +114,10 @@
         function getRandomDog(){
             fetch("https://random.dog/woof.json/")
             .then(results => results.json())
-            .then(dog => dogImg.setAttribute("src", dog.url))
+            .then(dog => {
+                dogImg.setAttribute("src", dog.url)
+                console.log(dog);
+            })
         }
         dogBtn.addEventListener("click", getRandomDog)
     } catch (err){
