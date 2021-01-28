@@ -108,7 +108,20 @@
         const memeError = document.getElementById("memeError")
         memeError.textContent = err
     }
-
+    try {
+        const dogImg = document.getElementById("dogImg")
+        const dogBtn = document.getElementById("dogBtn")
+        function getRandomDog(){
+            fetch("https://random.dog/woof.json/")
+            .then(results => results.json())
+            .then(dog => dogImg.setAttribute("src", dog.url))
+        }
+        dogBtn.addEventListener("click", getRandomDog)
+    } catch (err){
+        console.error(err);
+        const dogError = document.getElementById("dogError")
+        dogError.textContent = err
+    }
     try {
         const diceBtn = document.getElementById("diceBtn")
         function rollDice(){
