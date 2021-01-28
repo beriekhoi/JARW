@@ -151,22 +151,18 @@
         var randomNumberError = document.getElementById("randomNumberError")
         const randomNumberButton = document.getElementById("randomNumberButton")
         randomNumberButton.addEventListener('click', function() {
+            var randomNumberMinElement = document.getElementById("inputMin")
+            var randomNumberMaxElement = document.getElementById("inputMax")
             var randomNumberMax = parseInt(document.getElementById('inputMin').value);
             var randomNumberMin = parseInt(document.getElementById('inputMax').value);
             const result = document.getElementById("randomNumberResult")
             function removeRandomNumberError(){
                 randomNumberError.textContent = ""
             }
-            if (randomNumberMin.value == "" || randomNumberMax.value == "" ){
-                randomNumberError.textContent = "Both fields are required."
-                randomNumberMin.addEventListener("click", removeRandomNumberError)
-                randomNumberMax.addEventListener("click", removeRandomNumberError)
-                return
-            }
             if(isNaN(randomNumberMin) || isNaN(randomNumberMax)){
-                randomNumberError.textContent = ""
-                randomNumberMin.addEventListener("click", removeRandomNumberError)
-                randomNumberMax.addEventListener("click", removeRandomNumberError)
+                randomNumberError.textContent = "Both fields are required and both should be numbers"
+                randomNumberMinElement.addEventListener("click", removeRandomNumberError)
+                randomNumberMaxElement.addEventListener("click", removeRandomNumberError)
                 return
             }
             result.textContent = getRandomNumber(randomNumberMin, randomNumberMax)
