@@ -50,9 +50,13 @@ button::before{
 button:hover::before{
     clip-path: circle(100% at 50% 100%);
 }
-img{
+.dog, .meme{
     height: 400px;
     width: auto;
+}
+.dice, .qt {
+    height: 150px;
+    width:auto;
 }
 ul{
     list-style-type: none;
