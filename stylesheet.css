@@ -9,11 +9,8 @@
 h1{
     text-align: center;
 }
-button{
-    padding: 5px 10px;
-    cursor: pointer;
-}
 .error{
+    background-color: black;
     color: red;
     font-size: 16px;
 }
@@ -25,6 +22,9 @@ body{
     background-size: cover;
 }
 button{
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
     width: 100px;
     height:2rem;
     margin: 30px 40px;
