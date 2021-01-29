@@ -50,7 +50,7 @@ button::before{
 button:hover::before{
     clip-path: circle(100% at 50% 100%);
 }
-.dog, .meme{
+.animal, .meme{
     height: 400px;
     width: auto;
 }
