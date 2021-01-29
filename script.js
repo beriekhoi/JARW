@@ -128,7 +128,8 @@
         }
         animalBtn.addEventListener("click", getAnimal)
     } catch (err){
-
+        const animalError = document.getElementById("animalError")
+        animalError.textContent = err
     }
     try {
         const diceBtn = document.getElementById("diceBtn")
