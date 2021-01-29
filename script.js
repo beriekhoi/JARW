@@ -109,21 +109,26 @@
         memeError.textContent = err
     }
     try {
-        const dogImg = document.getElementById("dogImg")
-        const dogBtn = document.getElementById("dogBtn")
-        function getRandomDog(){
-            fetch("https://random.dog/woof.json/")
-            .then(results => results.json())
-            .then(dog => {
-                dogImg.setAttribute("src", dog.url)
-                console.log(dog);
+        const animalBtn = document.getElementById("animalBtn")
+        const animalImg = document.getElementById("animalImg")
+        function getAnimal(params){
+            const animalSelector = getRandomNumber(1,2)
+            if (animalSelector == 1){
+                fetch("https://random.dog/woof.json").then(r => {
+                    console.log(r)
+                    return r.json()
+                }).then(doggo => animalImg.setAttribute("src", doggo.url))
+            } else {
+            fetch("https://randomfox.ca/floof/").then(results => {
+                return results.json()
+            }).then(fox => {
+                animalImg.setAttribute("src", fox.image)
             })
+            }
         }
-        dogBtn.addEventListener("click", getRandomDog)
+        animalBtn.addEventListener("click", getAnimal)
     } catch (err){
-        console.error(err);
-        const dogError = document.getElementById("dogError")
-        dogError.textContent = err
+
     }
     try {
         const diceBtn = document.getElementById("diceBtn")
