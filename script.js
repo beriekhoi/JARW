@@ -111,19 +111,24 @@
     try {
         const animalBtn = document.getElementById("animalBtn")
         const animalImg = document.getElementById("animalImg")
-        function getAnimal(params){
-            const animalSelector = getRandomNumber(1,2)
+        function getAnimal(){
+            const animalSelector = getRandomNumber(1,3)
             if (animalSelector == 1){
                 fetch("https://random.dog/woof.json").then(r => {
                     console.log(r)
                     return r.json()
                 }).then(doggo => animalImg.setAttribute("src", doggo.url))
-            } else {
+            } else if(animalSelector == 2){
             fetch("https://randomfox.ca/floof/").then(results => {
                 return results.json()
             }).then(fox => {
                 animalImg.setAttribute("src", fox.image)
             })
+            } else {
+                fetch("http://aws.random.cat/meow").then(results => {
+	                console.log(results)
+                    return results.json()
+                }).then(meow => animalImg.setAttribute("src", meow.file))
             }
         }
         animalBtn.addEventListener("click", getAnimal)
