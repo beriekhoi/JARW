@@ -142,6 +142,8 @@
             var diceSelector = getRandomNumber(1,6)
             if (diceSelector == 0){
                 diceSelector++
+            } else if(diceSelector > 6 ){
+                diceSelector--
             }
             const diceImg = document.getElementById("diceImg")
             const diceRollAudio = new Audio("./dices/rollDiceAudio.mp3")
