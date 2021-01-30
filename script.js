@@ -118,17 +118,12 @@
                     console.log(r)
                     return r.json()
                 }).then(doggo => animalImg.setAttribute("src", doggo.url))
-            } else if(animalSelector == 2){
+            } else {
             fetch("https://randomfox.ca/floof/").then(results => {
                 return results.json()
             }).then(fox => {
                 animalImg.setAttribute("src", fox.image)
             })
-            } else {
-                fetch("http://aws.random.cat/meow").then(results => {
-	                console.log(results)
-                    return results.json()
-                }).then(meow => animalImg.setAttribute("src", meow.file))
             }
         }
         animalBtn.addEventListener("click", getAnimal)
