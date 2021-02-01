@@ -112,7 +112,7 @@
         const animalBtn = document.getElementById("animalBtn")
         const animalImg = document.getElementById("animalImg")
         function getAnimal(){
-            const animalSelector = getRandomNumber(1,3)
+            const animalSelector = getRandomNumber(1,4)
             if (animalSelector == 1){
                 fetch("https://random.dog/woof.json").then(r => {
                     console.log(r)
@@ -198,5 +198,26 @@
         });
     } catch (err){
         randomNumberError.textContent = err
+    }
+    try {
+        const base64Input = document.getElementById("base64Input");
+        const base64Btn = document.getElementById("base64Btn");
+        var base64Error = document.getElementById("base64Error");
+        const base64Result = document.getElementById("base64Result");
+        function getBase64(){
+            if(base64Input.value == ""){
+                base64Error.textContent = "Please insert a text"
+                function removeBase64Error(){
+                    base64Error.textContent = ""
+                }
+                base64Input.addEventListener("click", removeBase64Error)
+                return
+            } else {
+                base64Result.textContent = btoa(base64Input.value)
+            }
+        }
+        base64Btn.addEventListener("click", getBase64)
+    } catch (err){
+        base64Error.textContent = err   
     }
 }())
