@@ -218,6 +218,48 @@
         }
         base64Btn.addEventListener("click", getBase64)
     } catch (err){
-        base64Error.textContent = err   
+        base64Error.textContent = err
+    }
+    try {
+        const encodeURIInput = document.getElementById("encodeURIInput")
+        const encodeURIResult = document.getElementById("encodeURIResult")
+        var encodeURIError = document.getElementById("encodeURIError")
+        const encodeURIBtn = document.getElementById("encodeURIBtn")
+        function getURI(){
+            if (encodeURIInput.value == ""){
+                encodeURIError.textContent = "Please insert a text"
+                function removeURIError(){
+                    encodeURIError.textContent = ""
+                }
+                encodeURIInput.addEventListener("click", removeURIError)
+                return
+            } else {
+                encodeURIResult.textContent = encodeURI(encodeURIInput.value)
+            }
+        }
+        encodeURIBtn.addEventListener("click", getURI)
+    } catch (err){
+        encodeURIError.textContent = err
+    }
+    try {
+        const decodeURIInput = document.getElementById("decodeURIInput")
+        var decodeURIError = document.getElementById("decodeURIError")
+        const decodeURIResult = document.getElementById("decodeURIResult")
+        const decodeURIBtn = document.getElementById("decodeURIBtn")
+        function getDecodedURI(){
+            if (decodeURIInput.value == ""){
+                decodeURIError.textContent = "Please insert a text"
+                function removeDecodeURIError(){
+                    decodeURIError.textContent = ""
+                }
+                decodeURIInput.addEventListener("click", removeDecodeURIError)
+                return
+            } else {
+                decodeURIResult.textContent = decodeURI(decodeURIInput.value)
+            }
+        }
+        decodeURIBtn.addEventListener("click", getDecodedURI)
+    } catch (err){
+        decodeURIError.textContent = err
     }
 }())
