@@ -284,4 +284,14 @@
     } catch (err){
         decodeURIError.textContent = err
     }
+    try{
+        const top = document.getElementById("top")
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+        top.addEventListener("click", scrollToTop)
+    }catch(e){
+
+    }
 }())
