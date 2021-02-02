@@ -221,6 +221,28 @@
         base64Error.textContent = err
     }
     try {
+        const atobInput = document.getElementById("atobInput")
+        var atobError = document.getElementById("atobError")
+        const atobResult = document.getElementById("atobResult")
+        const atobBtn = document.getElementById("atobBtn")
+        function decodeBase64(){
+            if (atobInput.value == ""){
+                atobError.textContent = "Please insert a text"
+                function removeAtobError(){
+                    atobError.textContent = ""    
+                }
+                atobInput.addEventListener("click", removeAtobError)
+                return
+            } else {
+                atobResult.textContent = atob(atobInput.value)
+            }
+        }
+        atobBtn.addEventListener("click", decodeBase64)
+    } catch (err){
+        console.error(err);
+        atobError.textContent = err
+    }
+    try {
         const encodeURIInput = document.getElementById("encodeURIInput")
         const encodeURIResult = document.getElementById("encodeURIResult")
         var encodeURIError = document.getElementById("encodeURIError")
