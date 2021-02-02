@@ -131,3 +131,8 @@ li a:hover {
 	font-size: 2rem;
 	display: block;
 }
+.top{
+    position: absolute;
+    float: left;
+    left: 50%;
+}
