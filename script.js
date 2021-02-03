@@ -79,6 +79,7 @@
     try {
         const memeButton = document.getElementById("memeButton")
         const memeImage = document.getElementById("meme")
+        const memeCredits = document.getElementById("memeCredits")
         function getMeme(){
             fetch("https://meme-api.herokuapp.com/gimme").then((results) => {
                 console.log(results);
@@ -101,6 +102,7 @@
                 }
                 console.log(result.url);
                 memeImage.setAttribute("src", result.url)
+                memeCredits.textContent = `posted by u/${result.author}`
             })
         }
         memeButton.addEventListener("click", getMeme)    
