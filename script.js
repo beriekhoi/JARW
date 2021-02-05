@@ -286,6 +286,28 @@
     } catch (err){
         decodeURIError.textContent = err;
     }
+    try {
+        const randomWebsites = ["http://corndog.io/", "http://eelslap.com/", "http://randomcolour.com/", "http://ihasabucket.com/", "http://beesbeesbees.com/", "http://drawing.garden/", "https://pointerpointer.com/", "https://cat-bounce.com/", "https://imaninja.com/", "http://www.ismycomputeron.com/", "https://strobe.cool/", "https://potatoortomato.com/", "http://www.yesnoif.com/"];
+        const randomWebsitesDescriptionArray = ["Corndog", "Slaap a poor guy with an eel", "Get a random colour", "he have a bucket", "BEES!!!", "Grow plants by drawing with your cursor", "There's always someone pointing at your cursor", "Bouncy bounce cats", "He's a NINJA!!!111!", "See if your computer is on", "woaaaaah what's happening here", "Is that a potato or a tomato?", "I don't even know how to describe this"];
+        const randomWebsitesDescriptionSpan = document.getElementById("randomWebsiteDescription");
+        const randomWebsiteBtn = document.getElementById("randomWebsiteBtn");
+        const randomWebsiteA = document.getElementById("randomWebsiteA")
+        var randomWebsiteError = document.getElementById("randomWebsiteError")
+        function getRandomWebsite(){
+            let randomWebsiteSelector = getRandomNumber(0,randomWebsites.length);
+            if (randomWebsiteSelector < 0){
+                randomWebsiteSelector++;
+            } else if(randomWebsiteSelector > randomWebsites.length){
+                randomWebsiteSelector--;
+            }
+            randomWebsiteA.setAttribute("href", randomWebsites[randomWebsiteSelector]);
+            randomWebsiteA.textContent = randomWebsites[randomWebsiteSelector]
+            randomWebsitesDescriptionSpan.textContent = randomWebsitesDescriptionArray[randomWebsiteSelector]
+        }
+        randomWebsiteBtn.addEventListener("click", getRandomWebsite)
+    } catch (err) {
+        randomWebsiteError.textContent = err
+    }
     try{
         const top = document.getElementById("top");
         function scrollToTop() {
