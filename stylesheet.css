@@ -6,6 +6,9 @@
 	-moz-box-sizing: border-box;
 	padding:0;
 }
+html{
+    scroll-behavior: smooth;
+}
 h1{
     text-align: center;
 }
@@ -60,6 +63,9 @@ button:hover::before{
 }
 ul{
     list-style-type: none;
+}
+.mainUL{
+    list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -80,17 +86,17 @@ div{
     padding: 10px 20px;
     margin: 0px 50px;
 }
-li {
+.main {
     float: left;
 }
-li a {
+.main a {
     display: block;
     color: white;
     text-align: center;
     padding: 15px 118.6px;
     text-decoration: none;
 }
-li a:hover {
+.main a:hover {
     background-color: #ffff;
     color: black ;
 }
