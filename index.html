@@ -67,11 +67,11 @@
     <meta name="description" content="Yes, another website without sense that only exists for no reason lol">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JARW</title>
-    <ul>
-        <li><a href="./others/about.html">About</a></li>
-        <li><a href="./others/other-sites.html">Other sites</a></li>
-        <li><a href="./others/social-media.html">Social Media</a></li>
-        <li><a href="./others/announcements.html">Announcements</a></li>
+    <ul class="mainUL">
+        <li class="main"><a href="./others/about.html">About</a></li>
+        <li class="main"><a href="./others/other-sites.html">Other sites</a></li>
+        <li class="main"><a href="./others/social-media.html">Social Media</a></li>
+        <li class="main"><a href="./others/announcements.html">Announcements</a></li>
       </ul>
     <br>
     <br>
@@ -80,6 +80,37 @@
 </head>
 <body>
     <br><br><br><br><br><br><br>
+    <div>
+        <h2>Menu</h2>
+        <ul>
+            <br>
+            <li><a href="#date">Clock</a></li>
+            <br>
+            <li><a href="#mainFact">Fact</a></li>
+            <br>
+            <li><a href="#mainMeme">Meme</a></li>
+            <br>
+            <li><a href="#mainAnimal">Animal pic</a></li>
+            <br>
+            <li><a href="#mainDice">Dice</a></li>
+            <br>
+            <li><a href="#mainQR">QR</a></li>
+            <br>
+            <li><a href="#mainRandomNumber">Random number</a></li>
+            <br>
+            <li><a href="#mainBase64">Encode Base64</a></li>
+            <br>
+            <li><a href="#mainAtob">Decode Base64</a></li>
+            <br>
+            <li><a href="#mainEncodeURI">Encode URI</a></li>
+            <br>
+            <li><a href="#mainDecodeURI">Decode URI</a></li>
+            <br>
+            <li><a href="#mainRandomWebsite">Get another random website</a></li>
+            <br>
+        </ul>
+    </div>
+    <br><br><br><br id="date"><br><br><br><br><br><br>
     <div>
     <h2>Date today</h2>
     <br><br>
@@ -107,7 +138,7 @@
     </span>
     <span id="dateError" class="error"></span>
     </div>
-    <br><br><br>
+    <br><br><br><br id="mainFact"><br><br><br><br><br><br>
     <div>
         <h2>Get a random fact</h2>
         <br>
@@ -117,7 +148,7 @@
         <br>
         <button id="factButton" class="factBtn">Get a fact</button>
     </div>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br id="mainMeme"><br><br><br><br><br><br>
     <div>
         <h2>Get a random meme</h2>
         <br><br>
@@ -130,7 +161,7 @@
         <img id="meme" class="meme">
         <br><br>
     </div>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br id="mainAnimal"><br><br><br><br><br><br>
     <div>
         <h2>Get a random animal pic</h2>
         <br><br>
@@ -139,7 +170,7 @@
         <span id="animalError"></span>
         <img id="animalImg" class="animal" >
     </div>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br id="mainDice"><br><br><br><br><br><br>
     <div>
         <h2>Roll a dice</h2>
         <br><br>
@@ -149,7 +180,7 @@
         <br><br>
         <img id="diceImg" class="diceImg">
     </div>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br id="mainQR"><br><br><br><br><br><br>
     <div class="QR">
         <h2>Convert text to QR code</h2>
         <br>
@@ -161,7 +192,7 @@
         <br><br>
         <img id="qrImage" class="qr">
     </div>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br id="mainRandomNumber"><br><br><br><br><br><br>
     <div>
         <h2>Get a random number</h2>
         <br>
@@ -173,7 +204,7 @@
         <span class="error" id="randomNumberError"></span>
         <span id="randomNumberResult"></span>
     </div>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br id="mainBase64"><br><br><br><br><br><br>
     <div>
         <h2>Convert text to Base64</h2>
         <br><br>
@@ -185,7 +216,7 @@
         <br><br>
         <button id="base64Btn">Convert</button>
     </div>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br id="mainAtob"><br><br><br><br><br><br>
     <div>
         <h2>Decode Base64</h2>
         <br><br>
@@ -197,7 +228,7 @@
         <br><br>
         <button id="atobBtn">Decode</button>
     </div>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br id="mainEncodeURI"><br><br><br><br><br><br>
     <div>
         <h2>Encode URI</h2>
         <br><br>
@@ -209,7 +240,7 @@
         <br><br>
         <button id="encodeURIBtn">Encode</button>
     </div>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br id="mainDecodeURI"><br><br><br><br><br><br>
     <div>
         <h2>Decode URI</h2>
         <br><br>
@@ -221,7 +252,7 @@
         <br><br>
         <button id="decodeURIBtn">Decode</button>
     </div>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br id="mainRandomWebsite"><br><br><br><br><br><br>
     <div>
         <h2>Get another random website (NOT made by me)</h2>
         <br>
