@@ -12,6 +12,11 @@ html{
 h1{
     text-align: center;
 }
+textarea{
+    width: 300px;
+    max-width: 300px;
+    height: 100px;
+}
 .error{
     background-color: black;
     color: red;
