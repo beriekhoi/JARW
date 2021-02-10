@@ -308,6 +308,26 @@
     } catch (err) {
         randomWebsiteError.textContent = err
     }
+    try {
+        var jsTesterError = document.getElementById("jsTesterError");
+        const jsTesterTextArea = document.getElementById("jsTesterTextArea");
+        const jsTesterBtn = document.getElementById("jsTesterBtn");
+        function executeJsTester(){
+            try {
+                eval(jsTesterTextArea.value);
+            } catch (err){
+                jsTesterError.textContent = err;
+            }
+            function removeJsTesterError(){
+                jsTesterError.textContent = "";
+            }
+            jsTesterTextArea.addEventListener("click", removeJsTesterError);
+        }
+        jsTesterBtn.addEventListener("click", executeJsTester)
+    } catch (err){
+        jsTesterError.textContent = err;
+        console.error(err);
+    }
     try{
         const top = document.getElementById("top");
         function scrollToTop() {
