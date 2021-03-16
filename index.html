@@ -109,6 +109,8 @@
             <li><a href="#mainRandomWebsite">Get another random website</a></li>
             <br>
             <li><a href="#mainJsTester">JS code tester</a></li>
+            <br>
+            <li><a href="#mainReversed">Reverse a text</a></li>
         </ul>
     </div>
     <br><br><br><br id="date"><br><br><br><br><br><br>
@@ -126,13 +128,13 @@
             </span>
             <br>
 			<span class="reloj">
-				<p id="hora" class="hora"></p>
+				<p id="hora" class="hora">18</p>
 				<p>:</p>
-				<p id="minutos" class="minutos"></p>
+				<p id="minutos" class="minutos">12</p>
 				<p>:</p>
 				<span class="cajaSegundos">
-					<p id="ampm" class="ampm"></p>
-					<p id="segundos" class="segundos"></p>
+					<p id="ampm" class="ampm">PM</p>
+					<p id="segundos" class="segundos">56</p>
                 </span>
 			</span>
 		</span>
@@ -277,13 +279,24 @@
         <br>
         <button id="jsTesterBtn">Run</button>
     </div>
+    <br><br><br><br><br id="mainReversed"><br><br><br><br><br>
+    <div>
+        <h2>Get a reversed text</h2>
+        <br>
+        <input type="text" id="reversed" placeholder="Insert your text here">
+        <br><br>
+        <span class="error" id="reversedError"></span>
+        <br>
+        <span id="reversedResult"></span>
+        <br><br>
+        <button id="reversedButton">Decode</button>
+    </div>
     <br><br><br><br><br><br><br><br><br><br>
     <button id="top" class="top">Scroll up</button>
     <br><br><br>
     <span class="error" id="topError"></span>
     <br><br><br><br><br><br><br><br><br><br>
     <script src="script.js"></script>
-    <script src="require.js"></script>
     <footer class="footer">More stuff comming soon!</footer>
 </body>
 </html>
