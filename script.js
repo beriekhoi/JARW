@@ -22,10 +22,10 @@
                 pDia = document.getElementById("dia"),
                 pMes = document.getElementById("mes"),
                 pYear = document.getElementById("year");
-            const semana = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var semana = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
             pDiaSemana.textContent = semana[diaSemana];
             pDia.textContent = dia;
-            const meses = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+            var meses = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
             pMes.textContent = meses[mes];
             pYear.textContent = year;
             if (horas >= 12) {
@@ -52,14 +52,14 @@
             pSegundos.textContent = segundos;
         };
         updateHour();
-        let intervalo = setInterval(updateHour, 1000);
+        var intervalo = setInterval(updateHour, 1000);
         intervalo;
     } catch (err){
         dateError.textContent = err;
     }
     try {
-        const factButton = document.getElementById("factButton");
-        const fact = document.getElementById("fact")
+        var factButton = document.getElementById("factButton");
+        var fact = document.getElementById("fact")
         factButton.addEventListener("click", ()=>{
             fetch("https://uselessfacts.jsph.pl/random.json?language=en").then(r => {
                 return r.json()
@@ -68,14 +68,14 @@
             });
         });
     } catch (err){
-        const factError = document.getElementById("factError");
+        var factError = document.getElementById("factError");
         factError.textContent = err;
     }
 
     try {
-        const memeButton = document.getElementById("memeButton");
-        const memeImage = document.getElementById("meme");
-        const memeCredits = document.getElementById("memeCredits");
+        var memeButton = document.getElementById("memeButton");
+        var memeImage = document.getElementById("meme");
+        var memeCredits = document.getElementById("memeCredits");
         function getMeme(){
             fetch("https://meme-api.herokuapp.com/gimme").then((results) => {
                 console.log(results);
@@ -87,7 +87,7 @@
                     return;
                 }
                 if (result.spoiler == true){
-                    const spoilerConfirm = confirm("Warning! The next meme was marked as a spoiler. Are you sure you wanna continue?");
+                    var spoilerConfirm = confirm("Warning! The next meme was marked as a spoiler. Are you sure you wanna continue?");
                     if (spoilerConfirm == false){
                         return;
                     } else {
@@ -103,14 +103,14 @@
         }
         memeButton.addEventListener("click", getMeme);
     } catch (err){
-        const memeError = document.getElementById("memeError");
+        var memeError = document.getElementById("memeError");
         memeError.textContent = err;
     }
     try {
-        const animalBtn = document.getElementById("animalBtn");
-        const animalImg = document.getElementById("animalImg");
+        var animalBtn = document.getElementById("animalBtn");
+        var animalImg = document.getElementById("animalImg");
         function getAnimal(){
-            const animalSelector = getRandomNumber(1,4);
+            var animalSelector = getRandomNumber(1,4);
             if (animalSelector == 1){
                 fetch("https://random.dog/woof.json").then(r => {
                     console.log(r)
@@ -131,11 +131,11 @@
         }
         animalBtn.addEventListener("click", getAnimal);
     } catch (err){
-        const animalError = document.getElementById("animalError");
+        var animalError = document.getElementById("animalError");
         animalError.textContent = err;
     }
     try {
-        const diceBtn = document.getElementById("diceBtn");
+        var diceBtn = document.getElementById("diceBtn");
         function rollDice(){
             var diceSelector = getRandomNumber(1,6);
             if (diceSelector == 0){
@@ -143,14 +143,14 @@
             } else if(diceSelector > 6 ){
                 diceSelector--;
             }
-            const diceImg = document.getElementById("diceImg");
-            const diceRollAudio = new Audio("./dices/rollDiceAudio.mp3");
+            var diceImg = document.getElementById("diceImg");
+            var diceRollAudio = new Audio("./dices/rollDiceAudio.mp3");
             setTimeout(diceRollAudio.play(), 1000);
             diceImg.setAttribute("src", `./dices/Dice ${diceSelector}.png`);
         }
         diceBtn.addEventListener("click", rollDice);
     } catch (err){
-        const diceError = document.getElementById("diceError");
+        var diceError = document.getElementById("diceError");
         diceError.textContent = err;
     }
     try {
@@ -166,7 +166,7 @@
                 x.addEventListener("click", removeError);
                 return;
             }
-            let url = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${x.value}`;
+            var url = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${x.value}`;
             qrImage.setAttribute("src", url);
         }
         var qrButton = document.getElementById("qrSubmit");
@@ -176,13 +176,13 @@
     }
     try {
         var randomNumberError = document.getElementById("randomNumberError");
-        const randomNumberButton = document.getElementById("randomNumberButton");
+        var randomNumberButton = document.getElementById("randomNumberButton");
         randomNumberButton.addEventListener('click', function() {
             var randomNumberMinElement = document.getElementById("inputMin");
             var randomNumberMaxElement = document.getElementById("inputMax");
             var randomNumberMax = parseInt(document.getElementById('inputMin').value);
             var randomNumberMin = parseInt(document.getElementById('inputMax').value);
-            const result = document.getElementById("randomNumberResult");
+            var result = document.getElementById("randomNumberResult");
             function removeRandomNumberError(){
                 randomNumberError.textContent = "";
             }
@@ -198,10 +198,10 @@
         randomNumberError.textContent = err;
     }
     try {
-        const base64Input = document.getElementById("base64Input");
-        const base64Btn = document.getElementById("base64Btn");
+        var base64Input = document.getElementById("base64Input");
+        var base64Btn = document.getElementById("base64Btn");
         var base64Error = document.getElementById("base64Error");
-        const base64Result = document.getElementById("base64Result");
+        var base64Result = document.getElementById("base64Result");
         function getBase64(){
             if(base64Input.value == ""){
                 base64Error.textContent = "Please insert a text";
@@ -219,10 +219,10 @@
         base64Error.textContent = err;
     }
     try {
-        const atobInput = document.getElementById("atobInput");
+        var atobInput = document.getElementById("atobInput");
         var atobError = document.getElementById("atobError");
-        const atobResult = document.getElementById("atobResult");
-        const atobBtn = document.getElementById("atobBtn");
+        var atobResult = document.getElementById("atobResult");
+        var atobBtn = document.getElementById("atobBtn");
         function decodeBase64(){
             if (atobInput.value == ""){
                 atobError.textContent = "Please insert a text";
@@ -241,10 +241,10 @@
         atobError.textContent = err;
     }
     try {
-        const encodeURIInput = document.getElementById("encodeURIInput");
-        const encodeURIResult = document.getElementById("encodeURIResult");
+        var encodeURIInput = document.getElementById("encodeURIInput");
+        var encodeURIResult = document.getElementById("encodeURIResult");
         var encodeURIError = document.getElementById("encodeURIError");
-        const encodeURIBtn = document.getElementById("encodeURIBtn");
+        var encodeURIBtn = document.getElementById("encodeURIBtn");
         function getURI(){
             if (encodeURIInput.value == ""){
                 encodeURIError.textContent = "Please insert a text";
@@ -262,10 +262,10 @@
         encodeURIError.textContent = err;
     }
     try {
-        const decodeURIInput = document.getElementById("decodeURIInput");
+        var decodeURIInput = document.getElementById("decodeURIInput");
         var decodeURIError = document.getElementById("decodeURIError");
-        const decodeURIResult = document.getElementById("decodeURIResult");
-        const decodeURIBtn = document.getElementById("decodeURIBtn");
+        var decodeURIResult = document.getElementById("decodeURIResult");
+        var decodeURIBtn = document.getElementById("decodeURIBtn");
         function getDecodedURI(){
             if (decodeURIInput.value == ""){
                 decodeURIError.textContent = "Please insert a text";
@@ -283,15 +283,15 @@
         decodeURIError.textContent = err;
     }
     try {
-        const randomWebsites = ["http://corndog.io/", "http://eelslap.com/", "http://randomcolour.com/", "http://ihasabucket.com/", "http://beesbeesbees.com/", "http://drawing.garden/", "https://pointerpointer.com/", "https://cat-bounce.com/", "https://imaninja.com/", "http://www.ismycomputeron.com/", "https://strobe.cool/", "https://potatoortomato.com/", "http://www.yesnoif.com/", "http://wutdafuk.com/", "http://unicodesnowmanforyou.com/", "https://iamawesome.com/", "http://tencents.info/", "http://chillestmonkey.com/", "https://crouton.net/", "http://www.crossdivisions.com/", "http://pixelsfighting.com/", "http://www.blankwindows.com/","http://lacquerlacquer.com/", "http://chihuahuaspin.com/", "http://tunnelsnakes.com/", "https://www.ascii-middle-finger.com/", "http://dogs.are.the.most.moe/", "http://onemillionlols.com/", "http://yeahlemons.com/","http://www.donothingfor2minutes.com/", "http://nooooooooooooooo.com/", "https://www.bouncingdvdlogo.com/", "https://dadlaughbutton.com/", "http://spaceis.cool/", "http://www.amialright.com/", "https://zoomquilt.org/", "https://remoji.com/", "http://papertoilet.com/", "https://heeeeeeeey.com/", "https://weirdorconfusing.com/", "http://www.staggeringbeauty.com/", "http://burymewithmymoney.com/", "https://thatsthefinger.com/", "https://smashthewalls.com/", "http://endless.horse/", "https://alwaysjudgeabookbyitscover.com/", "https://jacksonpollock.org/", "http://www.partridgegetslucky.com/", "http://www.movenowthinklater.com/", "http://www.rrrgggbbb.com/", "http://www.republiquedesmangues.fr/", "https://chrismckenzie.com/", "https://mondrianandme.com/", "http://ninjaflex.com/", "http://www.koalastothemax.com/", "http://corndogoncorndog.com/", "http://www.everydayim.com/", "http://hasthelargehadroncolliderdestroyedtheworldyet.com/", "https://corgiorgy.com/", "http://www.omfgdogs.com/#", "http://scroll-o-meter.club/", "http://www.trashloop.com/", "https://killyourbrowser.netlify.app/"];
-        const randomWebsitesDescriptionArray = ["Corndog", "Slaap a guy with an eel", "Get a random colour", "he have a bucket", "BEES!!", "Draw as you hover your mouse throw the site", "Always pointing at your cursor", "Bouncy bounce cats", "He's a ninja!!!!!!!", "See if your computer is on", "ASH é€´ é«Ã! é6í é±¦ é<", "Is that a potato or a tomato?", "idk how to describe it", "wut da fuk is dis", "An unicode snowman because why not", "You're awesome :D", "Literally just 10 cents", "He do be chillin", "Me when the C R O U T O N", "Also, I don't know how to describe this", "Pixels fight wooooooooooooo", "Why are there so many sites that idk how to describe", "Painting nails bc why not", "Chihuahua spinning", "Tunnel snakes rule!", "Send this to someone you hate", "Pet a dog :D", "LOL * 1e6", "When life gives you lemons, make a website...?", "Do nothing for 2 minutes. Just nothing.", "Nooooooooooooooooooooo :(","still waiting for it to bounce on a corner", "dad laugh.mp3", "Earth rotating around the sun", "See if you're alright", "Endless zoooooom", "Draw with emojis as you hover your mouse", "Roll it like a kitty", "hey ho!", "Weird things on ebay for no reason bryh", "Warning: Flashing images ahead.", "Bury him with his money", "Be carefull!", "You're angry but you don't wanna damage something. Try this page.", "Endless horse", "Why not tho", "Make some art with your cursor.", "Literally ust partridge dancing to \"Lucky\"", "And again, idk how to describe it.", "Saying RGB as you hover with your mouse", "Mangoooooooooooooooooos", "This cube loves seeing at your cursor", "why idk how to describe so many pages", "Ninja and flex", "Hover the dots to show a koala image", "More corndogs", "Every day he's", "What a nice question. You'll see a yes when it happens.", "CORGIS AND CORGIIIS", "Random dogs running because why not", "How much can you scroll?", "You'll never do it", "Made by me for no reason lol"];
-        const randomWebsitesDescriptionSpan = document.getElementById("randomWebsiteDescription");
-        const randomWebsiteBtn = document.getElementById("randomWebsiteBtn");
-        const randomWebsiteA = document.getElementById("randomWebsiteA")
+        var randomWebsites = ["http://corndog.io/", "http://eelslap.com/", "http://randomcolour.com/", "http://ihasabucket.com/", "http://beesbeesbees.com/", "http://drawing.garden/", "https://pointerpointer.com/", "https://cat-bounce.com/", "https://imaninja.com/", "http://www.ismycomputeron.com/", "https://strobe.cool/", "https://potatoortomato.com/", "http://www.yesnoif.com/", "http://wutdafuk.com/", "http://unicodesnowmanforyou.com/", "https://iamawesome.com/", "http://tencents.info/", "http://chillestmonkey.com/", "https://crouton.net/", "http://www.crossdivisions.com/", "http://pixelsfighting.com/", "http://www.blankwindows.com/","http://lacquerlacquer.com/", "http://chihuahuaspin.com/", "http://tunnelsnakes.com/", "https://www.ascii-middle-finger.com/", "http://dogs.are.the.most.moe/", "http://onemillionlols.com/", "http://yeahlemons.com/","http://www.donothingfor2minutes.com/", "http://nooooooooooooooo.com/", "https://www.bouncingdvdlogo.com/", "https://dadlaughbutton.com/", "http://spaceis.cool/", "http://www.amialright.com/", "https://zoomquilt.org/", "https://remoji.com/", "http://papertoilet.com/", "https://heeeeeeeey.com/", "https://weirdorconfusing.com/", "http://www.staggeringbeauty.com/", "http://burymewithmymoney.com/", "https://thatsthefinger.com/", "https://smashthewalls.com/", "http://endless.horse/", "https://alwaysjudgeabookbyitscover.com/", "https://jacksonpollock.org/", "http://www.partridgegetslucky.com/", "http://www.movenowthinklater.com/", "http://www.rrrgggbbb.com/", "http://www.republiquedesmangues.fr/", "https://chrismckenzie.com/", "https://mondrianandme.com/", "http://ninjaflex.com/", "http://www.koalastothemax.com/", "http://corndogoncorndog.com/", "http://www.everydayim.com/", "http://hasthelargehadroncolliderdestroyedtheworldyet.com/", "https://corgiorgy.com/", "http://www.omfgdogs.com/#", "http://scroll-o-meter.club/", "http://www.trashloop.com/", "https://killyourbrowser.netlify.app/"];
+        var randomWebsitesDescriptionArray = ["Corndog", "Slaap a guy with an eel", "Get a random colour", "he have a bucket", "BEES!!", "Draw as you hover your mouse throw the site", "Always pointing at your cursor", "Bouncy bounce cats", "He's a ninja!!!!!!!", "See if your computer is on", "ASH é€´ é«Ã! é6í é±¦ é<", "Is that a potato or a tomato?", "idk how to describe it", "wut da fuk is dis", "An unicode snowman because why not", "You're awesome :D", "Literally just 10 cents", "He do be chillin", "Me when the C R O U T O N", "Also, I don't know how to describe this", "Pixels fight wooooooooooooo", "Why are there so many sites that idk how to describe", "Painting nails bc why not", "Chihuahua spinning", "Tunnel snakes rule!", "Send this to someone you hate", "Pet a dog :D", "LOL * 1e6", "When life gives you lemons, make a website...?", "Do nothing for 2 minutes. Just nothing.", "Nooooooooooooooooooooo :(","still waiting for it to bounce on a corner", "dad laugh.mp3", "Earth rotating around the sun", "See if you're alright", "Endless zoooooom", "Draw with emojis as you hover your mouse", "Roll it like a kitty", "hey ho!", "Weird things on ebay for no reason bryh", "Warning: Flashing images ahead.", "Bury him with his money", "Be carefull!", "You're angry but you don't wanna damage something. Try this page.", "Endless horse", "Why not tho", "Make some art with your cursor.", "Literally ust partridge dancing to \"Lucky\"", "And again, idk how to describe it.", "Saying RGB as you hover with your mouse", "Mangoooooooooooooooooos", "This cube loves seeing at your cursor", "why idk how to describe so many pages", "Ninja and flex", "Hover the dots to show a koala image", "More corndogs", "Every day he's", "What a nice question. You'll see a yes when it happens.", "CORGIS AND CORGIIIS", "Random dogs running because why not", "How much can you scroll?", "You'll never do it", "Made by me for no reason lol"];
+        var randomWebsitesDescriptionSpan = document.getElementById("randomWebsiteDescription");
+        var randomWebsiteBtn = document.getElementById("randomWebsiteBtn");
+        var randomWebsiteA = document.getElementById("randomWebsiteA")
         var randomWebsiteError = document.getElementById("randomWebsiteError")
         function getRandomWebsite(){
             
-            let randomWebsiteSelector = getRandomNumber(0,randomWebsites.length);
+            var randomWebsiteSelector = getRandomNumber(0,randomWebsites.length);
             if (randomWebsiteSelector < 0){
                 randomWebsiteSelector++;
             } else if(randomWebsiteSelector > randomWebsites.length){
@@ -307,8 +307,8 @@
     }
     try {
         var jsTesterError = document.getElementById("jsTesterError");
-        const jsTesterTextArea = document.getElementById("jsTesterTextArea");
-        const jsTesterBtn = document.getElementById("jsTesterBtn");
+        var jsTesterTextArea = document.getElementById("jsTesterTextArea");
+        var jsTesterBtn = document.getElementById("jsTesterBtn");
         function executeJsTester(){
             try {
                 eval(jsTesterTextArea.value);
@@ -324,6 +324,31 @@
     } catch (err){
         jsTesterError.textContent = err;
         console.error(err);
+    }
+    try {
+        var reversedText = document.getElementById('reversed');
+        var reversedBtn = document.getElementById('reversedButton');
+        var reversedError = document.getElementById('reversedError');
+        var reversedResult = document.getElementById('reversedResult');
+        reversedBtn.addEventListener('click', ()=>{
+            if (reversedText.value == '') {
+                reversedError.innerHTML = 'Please insert a text'
+                reversedText.addEventListener('click', ()=>{
+                    reversedError.innerHTML = ''
+                })
+            } else {
+                try {
+                    var splitString = reversedText.value.split("");
+                    var reverseArray = splitString.reverse();
+                    var joinArray = reverseArray.join("");
+                    reversedResult.innerHTML = joinArray;
+                } catch (err) {
+                    reversedError.innerHTML = err
+                }       
+            }
+        });
+    } catch (err){
+        reversedError.innerHTML = err;
     }
     try{
         const top = document.getElementById("top");
