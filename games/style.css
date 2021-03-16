@@ -1,0 +1,38 @@
+*{
+	margin:0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding:0;
+}
+body{
+    background-image: url(https://wallpaperstock.net/wallpapers/thumbs1/42684hd.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+ul{
+    list-style-type: none;
+}
+/* idk if I have div elements in this section but I'm too fucking lazy to check */
+div, p{
+    background-color: rgba(204, 204, 204, 0.5);
+    padding: 10px 20px;
+    margin: 0px 50px;
+}
+::-webkit-scrollbar {
+    width: 20px;
+  }
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 30px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: blueviolet;
+    border-radius: 10px;
+}
+h2{
+    text-align: center;
+    margin-top: 20px;
+}
