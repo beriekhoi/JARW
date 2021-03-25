@@ -1,4 +1,4 @@
-(function(){
+(()=>{
     const dateError = document.getElementById("dateError")
         function getRandomNumber(min,max){
             return Math.round(Math.random() * (1 + max - min) + min);
@@ -59,12 +59,14 @@
     }
     try {
         var factButton = document.getElementById("factButton");
-        var fact = document.getElementById("fact")
+        var fact = document.getElementById("fact");
+        var factCopy = document.getElementById('factCopy')
         factButton.addEventListener("click", ()=>{
             fetch("https://uselessfacts.jsph.pl/random.json?language=en").then(r => {
                 return r.json()
             }).then(fact_ => {
                 fact.innerHTML = fact_.text
+
             });
         });
     } catch (err){
@@ -73,6 +75,7 @@
     }
 
     try {
+        var memeURL = document.getElementById('memeURL');
         var memeButton = document.getElementById("memeButton");
         var memeImage = document.getElementById("meme");
         var memeCredits = document.getElementById("memeCredits");
@@ -99,6 +102,7 @@
                 console.log(result.url);
                 memeImage.setAttribute("src", result.url);
                 memeCredits.textContent = `posted by u/${result.author}`;
+                memeURL.setAttribute('href', result.url)
             })
         }
         memeButton.addEventListener("click", getMeme);
@@ -361,4 +365,4 @@
         const topError = document.getElementById("topError");
         topError.textContent = err
     }
-}());
+})()
