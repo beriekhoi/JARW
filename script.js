@@ -369,6 +369,9 @@
             var str1 = '';
             var str2 = [...ASCIIText.value].map(char=>char.charCodeAt(0));
             str2.forEach(e=>{
+                if (String(e).length == 2){
+                    e = `0${e}`
+                }
                 str1 += `${e} `;
             });
             ASCIIResult.innerHTML = str1;
