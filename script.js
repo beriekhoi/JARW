@@ -339,7 +339,7 @@
                 reversedError.innerHTML = 'Please insert a text'
                 reversedText.addEventListener('click', ()=>{
                     reversedError.innerHTML = ''
-                })
+                });
             } else {
                 try {
                     var splitString = reversedText.value.split("");
@@ -354,6 +354,28 @@
     } catch (err){
         reversedError.innerHTML = err;
     }
+    try {
+        var ASCIIError = document.getElementById('ASCIIError');
+        var ASCIIText = document.getElementById('ASCIIText');
+        var ASCIIResult = document.getElementById('ASCIIResult');
+        var ASCIIButton = document.getElementById('ASCIIButton');
+        ASCIIButton.addEventListener('click', ()=>{
+            if(ASCIIText.value == ''){
+                ASCIIError.innerHTML = 'Please insert a text';
+                ASCIIText.addEventListener('click', ()=>{
+                    ASCIIError.innerHTML=''
+                });
+            }
+            var str1 = '';
+            var str2 = [...ASCIIText.value].map(char=>char.charCodeAt(0));
+            str2.forEach(e=>{
+                str1 += `${e} `;
+            });
+            ASCIIResult.innerHTML = str1;
+        });
+    } catch (err) {
+        ASCIIError.innerHTML=err
+    }
     try{
         const top = document.getElementById("top");
         function scrollToTop() {
@@ -365,4 +387,4 @@
         const topError = document.getElementById("topError");
         topError.textContent = err
     }
-})()
+})();
