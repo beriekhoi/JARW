@@ -77,6 +77,8 @@
             <li><a href="#mainNothing">A button that does nothing</a></li>
             <br>
             <li><a href="#mainASCIIcode">Convert text to ASCII code</a></li>
+            <br>
+            <li><a href="#mainEightBall">Ask an 8 ball</a></li>
         </ul>
     </div>
     <br><br><br><br id="date"><br><br><br><br><br><br>
@@ -278,7 +280,20 @@
         <br>
         <button id="ASCIIButton">Convert</button>
     </div>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br id="mainEightBall"><br><br><br><br><br><br>
+    <div>
+        <h2>Ask an 8 ball</h2>
+        <br>
+        <input type="text" placeholder="Ask something" id="eightBallInput">
+        <br>
+        <img class="eightBall" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/8-Ball_Pool.svg/768px-8-Ball_Pool.svg.png" alt="8 ball">
+        <br>
+        <span class="error" id="eightBallError"></span>
+        <br>
+        <span id="eightBallAnswer"></span>
+        <br>
+        <button id="eightBallBtn">Ask</button>
+    </div>
     <button id="top" class="top">Scroll up</button>
     <br><br><br>
     <span class="error" id="topError"></span>
