@@ -62,7 +62,7 @@ button:hover::before{
     height: 400px;
     width: auto;
 }
-.dice, .qt {
+.dice, .qt, .eightBall {
     height: 150px;
     width:auto;
 }
