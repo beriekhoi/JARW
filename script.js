@@ -379,6 +379,26 @@
     } catch (err) {
         ASCIIError.innerHTML=err
     }
+    try {
+        var eightBallError = document.getElementById('eightBallError');
+        var eightBallBtn = document.getElementById('eightBallBtn');
+        var eightBallInput = document.getElementById('eightBallInput');
+        var eightBallAnswer = document.getElementById('eightBallAnswer');
+        eightBallBtn.addEventListener('click', ()=>{
+            var eightBallAnswers = ['Of course','Yes', 'Obviously' ,'Probably yes','Depends on','A little bit probably','Idk man','So so','Perhaps',
+            'Meh','There\'s a low chance','More likely no','No','Definitely no'];
+            if(eightBallInput.value == ''){
+                eightBallError.innerHTML = 'Ask something'
+                eightBallInput.addEventListener('click', ()=>{
+                    eightBallError.innerHTML = ''
+                });
+                return
+            }
+            eightBallAnswer.innerHTML = eightBallAnswers[getRandomNumber(0,eightBallAnswers.length)];
+        });
+    } catch (err) {
+        eightBallError.innerHTML = err;
+    }
     try{
         const top = document.getElementById("top");
         function scrollToTop() {
