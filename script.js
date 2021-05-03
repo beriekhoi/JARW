@@ -417,7 +417,7 @@
             });
         });
     } catch (err) {
-        
+        document.getElementById('quizError').innerHTML=err
     }
     try{
         const top = document.getElementById("top");
