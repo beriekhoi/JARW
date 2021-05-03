@@ -399,6 +399,26 @@
     } catch (err) {
         eightBallError.innerHTML = err;
     }
+    try {
+        document.getElementById('quizBtn').addEventListener('click', ()=>{
+            fetch('https://opentdb.com/api.php?amount=10&type=multiple').then(r=>r.json()).then(data=>{
+                var answers = [data.results[0].incorrect_answers[0], data.results[0].incorrect_answers[1], data.results[0]
+                .incorrect_answers[2],data.results[0].correct_answer];
+                answers.sort(() => (Math.random() > .5) ? 1 : -1);
+                var input = prompt(`${data.results[0].question}\n\n-${answers[0]}\n-${answers[1]}\n-${answers[2]}\n-${answers[3]}`);
+                switch (input) {
+                    case data.results[0].correct_answer:
+                        alert(`Right! It was ${data.results[0].correct_answer}!`);
+                        break
+                    default:
+                        alert(`Wrong! it was ${data.results[0].correct_answer}`);
+                        break   
+                }
+            });
+        });
+    } catch (err) {
+        
+    }
     try{
         const top = document.getElementById("top");
         function scrollToTop() {
