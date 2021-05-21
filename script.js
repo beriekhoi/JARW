@@ -419,6 +419,24 @@
     } catch (err) {
         document.getElementById('quizError').innerHTML=err
     }
+    try {
+        var ASCIIDecodeInput = document.getElementById('ASCIIDecodeInput');
+        var ASCIIDecodeResult = document.getElementById('ASCIIDecodeResult');
+        var ASCIIDecodeError = document.getElementById('ASCIIDecodeError');
+        var ASCIIDecodeBtn = document.getElementById('ASCIIDecodeBtn');
+        ASCIIDecodeBtn.addEventListener('click', ()=>{
+            if(ASCIIDecodeInput.value == ''){ASCIIDecodeError.textContent = 'Please insert a text';
+            ASCIIDecodeInput.addEventListener('click', ()=>{ASCIIDecodeError.textContent = ''});}
+            var str = '';
+            var arr = ASCIIDecodeInput.value.split(' ');
+            arr.forEach(e=>{
+                str += String.fromCharCode(Number(e));
+            });
+            ASCIIDecodeResult.textContent = str;
+        });
+    } catch (err) {
+        ASCIIDecodeError.textContent = err;
+    }
     try{
         const top = document.getElementById("top");
         function scrollToTop() {
@@ -428,6 +446,6 @@
         top.addEventListener("click", scrollToTop);
     }catch(err){
         const topError = document.getElementById("topError");
-        topError.textContent = err
+        topError.textContent = err;
     }
 })();
